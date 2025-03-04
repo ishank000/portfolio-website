@@ -16,6 +16,22 @@ Welcome to my personal portfolio website. I'm Ishank Sahni, a BCA student and we
 - **Hosting:**
   - Netlify
 
+
+## 💡 Approach & Design Decisions  
+
+### 🎨 Design Philosophy  
+The goal of this portfolio was to create a **clean, professional, and intuitive** showcase of my work while maintaining usability and clarity.  
+
+- **Minimalist yet Personal** – A clean UI that balances simplicity with branding.  
+- **Structured Navigation** – Sections for Introduction, Work (Quips & Weather App), About, and Contact.  
+- **Optimized for Performance & Accessibility** – Fast loading, fully responsive, and readable on all devices.  
+
+### 🔹 Key Design Choice  
+The portfolio avoids unnecessary clutter while maintaining **visual appeal and clarity**. Instead of excessive styling, the focus is on **content, usability, and structured presentation.**  
+
+This portfolio serves as a **living showcase** of my work, continuously evolving with new projects and skills. 🚀  
+
+
 ## 📁 Project Structure
 ```
 portfolio-website/
