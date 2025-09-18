@@ -1,169 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Ishank Sahni — BCA student and web developer. Portfolio showcasing React projects, weather app, and a Twitter-like platform.">
+    <title>Ishank Sahni — Portfolio</title>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Optional UI library links (for quick demos / prototypes) -->
+    <!-- Bootstrap CDN (CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
+    <!-- Material Icons (useful with MUI React in projects) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Appwrite SDK (use in projects that integrate Appwrite) -->
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@8.2.0/dist/appwrite.min.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/favicon.ico">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#work">WORK</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+        <nav role="navigation" aria-label="Main navigation">
+            <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+            <ul id="nav-list" class="nav-list">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
-        <section class="hero">
-            <h1>ISHANK SAHNI</h1>
-            <div class="hero-info">
-                <div>
-                    <h2>🔥 WEB DEV ENTHUSIAST & BCA STUDENT
-                        
-                        
-                        
-                        <br>BUILDING & LEARNING, ONE PROJECT AT A TIME</h2>
+        <section class="hero" id="home" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+                <h1 id="hero-heading">Ishank Sahni</h1>
+                <p class="hero-sub">🔥 Web-dev enthusiast & BCA student — building & learning, one project at a time.</p>
+
+                <div class="hero-tags" aria-hidden="false">
+                    <p>💻 Turning ideas into interactive web apps • React • Vite • Responsive</p>
                 </div>
-                <div>
-                    <h2>💻 EXPLORING CODE, CREATING IMPACT<br>TURNING IDEAS INTO INTERACTIVE WEB APPS</h2>
+
+                <div class="hero-ctas">
+                    <a class="btn" href="#work">View Work</a>
+                    <a class="btn-outline" href="#contact">Contact</a>
                 </div>
             </div>
+        </section>
+
+        <!-- WORK / Projects -->
+        <section id="work" class="section" aria-labelledby="work-heading">
+            <header class="section-header">
+                <h2 id="work-heading">Work</h2>
+                <p class="section-sub">Selected projects with live links and short tech notes.</p>
+            </header>
+
+            <div class="portfolio-grid" role="list">
+                <article class="portfolio-item" role="listitem">
+                    <a href="https://quips-production-3192.up.railway.app/tweet/" target="_blank" rel="noopener noreferrer" aria-label="Open Quips project (opens in new tab)">
+                        <figure>
+                            <img src="quips1.png" alt="Quips app screenshot — minimalist Twitter-like platform" loading="lazy">
+                            <figcaption>Quips — Minimal Twitter-like platform</figcaption>
+                        </figure>
+                    </a>
+                    <p class="project-desc">
+                        A minimalist real-time message app with register/login and posting. Built to demonstrate authentication flows, API handling, and responsive UI.
+                    </p>
+                    <p class="project-tech" aria-hidden="true">Tech: React, Axios, REST APIs, Appwrite (backend), Vite, Responsive</p>
+                </article>
+
+                <article class="portfolio-item" role="listitem">
+                    <a href="https://minimalwx.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Weather app (opens in new tab)">
+                        <figure>
+                            <img src="weather.png" alt="MinimalWX app screenshot — weather dashboard" loading="lazy">
+                            <figcaption>MinimalWX — Weather app</figcaption>
+                        </figure>
+                    </a>
+                    <p class="project-desc">
+                        Clean, Braun/Dieter Rams inspired UI with current conditions and 5-day forecast. Focused on API integration, error handling, and mobile-first responsive design.
+                    </p>
+                    <p class="project-tech" aria-hidden="true">Tech: JS, Fetch/Axios, REST APIs, Vite, Tailwind (or CSS)</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <header class="section-header">
+                <h2 id="about-heading">About</h2>
+            </header>
+
+            <div class="about-container">
+                <h3 class="about-title">More about <span class="name-highlight">Ishank</span></h3>
+                <p class="bio">
+                    I'm Ishank Sahni — a BCA student and web developer from India. I build clean, interactive web experiences using modern tools (React, Vite). I enjoy turning ideas into functional apps — from a Weather App to Quips (a Twitter-like project). I also work with Python backends (Flask/Django) when building full-stack features.
+                </p>
+                <p class="about-cta">
+                    Quick facts: 3 months React internship • Comfortable with Git & deployment • Prefer practical, well-documented projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section" aria-labelledby="skills-heading">
+            <header class="section-header">
+                <h2 id="skills-heading">Skills & Certifications</h2>
+            </header>
+
+            <div class="skills-grid">
+                <div class="skills-column">
+                    <h4>Core (Show these in every project)</h4>
+                    <ul>
+                        <li>React.js (Components, Hooks, JSX)</li>
+                        <li>REST APIs + Axios / fetch</li>
+                        <li>State: Context API / Redux (basic)</li>
+                        <li>Appwrite (Auth, Database, File storage — serverless)</li>
+                        <li>Responsive Web Design (mobile-first)</li>
+                        <li>Git & GitHub (clean commits + READMEs)</li>
+                        <li>Deployment: Vercel / Netlify</li>
+                    </ul>
+                </div>
+
+                <div class="skills-column">
+                    <h4>Secondary / Nice-to-have</h4>
+                    <ul>
+                        <li>Vite</li>
+                        <li>Tailwind CSS</li>
+                        <li>Material UI (MUI) / React Bootstrap — show one in projects</li>
+                        <li>Framer Motion (polish)</li>
+                        <li>ApexCharts / analytics components</li>
+                        <li>Postman (API testing)</li>
+                    </ul>
+                </div>
+
+                <div class="certs-column">
+                    <h4>Certificates</h4>
+                    <ul>
+                        <li><a href="https://drive.google.com/file/d/1xn0ZnnA2MUy5lCZ_LCf2FdR3pZ4-VAZd/view" target="_blank" rel="noopener noreferrer">CS50: Intro to Programming with Python</a></li>
+                        <li><a href="https://drive.google.com/file/d/17HRvDLuV6Ojpow6sigYPmZNcaFh2EISz/view" target="_blank" rel="noopener noreferrer">Designing & Implementing a Microsoft Azure AI Solution</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+            <header class="section-header">
+                <h2 id="contact-heading">Let's work together</h2>
+            </header>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Send me a message</h4>
+                    <p>Email:</p>
+                    <p>
+                        <a href="mailto:sahniishank0@gmail.com" rel="noopener noreferrer">sahniishank0@gmail.com</a>
+                    </p>
+                    <p>Or use the form below — I reply within a few days.</p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>Find me</h4>
+                    <p><a href="https://in.linkedin.com/in/ishank-sahni-b02517282" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                    <p><a href="https://github.com/ishank000" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                </div>
+            </div>
+
+            <section class="contact-form-section" aria-label="Contact form">
+                <form class="form" action="https://formspree.io/f/myzkrdpl" method="POST">
+                    <div class="form-title">Let's Connect!<br><span>Have a project or just want to say hi? Drop a message below!</span></div>
+                    <label class="sr-only" for="name">Name</label>
+                    <input class="form-input" id="name" name="name" placeholder="Name" type="text" required>
+
+                    <label class="sr-only" for="email">Email</label>
+                    <input class="form-input" id="email" name="email" placeholder="Email" type="email" required>
+
+                    <label class="sr-only" for="message">Message</label>
+                    <textarea class="form-input" id="message" name="message" placeholder="Message" required></textarea>
+
+                    <button class="form-button" type="submit">Submit</button>
+                </form>
+            </section>
         </section>
     </main>
-    <div id="work">
-        <header class="work-header">
-            <h1>WORK</h1>
-        </header>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <a href="https://quips-production-3192.up.railway.app/tweet/">
-                    <img src="quips1.png" alt="Blaze Type - Font design project">
-                </a>
-    
-                <h3>A minimalist Twitter-like platform for sharing short messages in real-time. It focuses on simplicity, allowing users to register, log in, and post "quips" effortlessly.</h2>
-            </div>
-            <div class="portfolio-item">
-                <a href="https://minimalwx.netlify.app/">
-                
-                    <img src="weather.png" alt="Future Folio - Digital designer portfolio">
-                </a>
-    
-                <h3>A sleek weather app providing real-time conditions and a 5-day forecast. Designed with Dieter Rams / Braun Minimalism, it emphasizes clarity, functionality, and a clean aesthetic.</h2>
-            </div>
-        </div>
-    </div>
-    <div id="about">
-        <div class="about-container">
-            <h1 class="title">MORE ABOUT<br><span class="paul-text">ISHANK</span></h1>
 
-            
-            <p class="bio fade-in">Hey, I’m Ishank Sahni— a BCA student & web developer from India, passionate about crafting clean, interactive, and user-friendly web experiences. I love turning ideas into functional websites, working with HTML, CSS, JavaScript, and backend tools like Flask & Django.
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <span>© 2025 — India</span>
+            <a class="back-to-top" href="#home">Back to top</a>
+        </div>
+    </footer>
 
-                From building a Weather App to Quips, a Twitter-like platform, I’m always experimenting and refining my skills to create smooth, dynamic, and modern web application</p>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="header">
-                <div class="logo">
-                    Skills & Certifications
-                </div>
-            </div>
-    
-            <div class="sections">
-                <div class="title-column">
-                    <div class="section-title">Programming & Frameworks</div>
-                </div>
-                <div class="content-column">
-                    <div></div>
-                    <ul class="services-list fade-in">
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JS</li>
-                        <li>PYTHON</li>
-                        <li>DJANGO</li>
-                        <li>MICROSOFT AZURE AI TOOLS</li>
-                    </ul>
-                </div>
-            </div>
-    
-            <div class="sections">
-                <div class="title-column">
-                    <div class="section-title">Certificates</div>
-                </div>
-                <div class="content-column">
-                    <div></div>
-                    <ul class="services-list fade-in">
-                        <li><a href="https://drive.google.com/file/d/1xn0ZnnA2MUy5lCZ_LCf2FdR3pZ4-VAZd/view" target="_blank" class="cert-link">CS50's Introduction to Programming with Python</a></li>
-                        <li><a href="https://drive.google.com/file/d/17HRvDLuV6Ojpow6sigYPmZNcaFh2EISz/view" target="_blank" class="cert-link">Designing and Implementing a Microsoft Azure AI Solution</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="contact">
-        <div class="container">
-            <div class="header">
-                <div class="title">
-                    Let's Work<br>
-                    Together
-                </div>
-            </div>
-
-            <div class="contact-section">
-                <div class="contact-label">SEND ME A MESSAGE</div>
-                <div class="email">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sahniishank0@gmail.com" target="_blank" 
-                    style="color: white; text-decoration: none;">
-                        SAHNIISHANK0@GMAIL.COM
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="social-section">
-            <div class="social-label">FIND ME ON</div>
-            <div class="social-links">
-                <a href="https://in.linkedin.com/in/ishank-sahni-b02517282" target="_blank" 
-                   style="color: white; text-decoration: none;">
-                    LINKEDIN
-                </a>
-                <br>
-                <a href="https://github.com/ishank000" target="_blank" 
-                   style="color: white; text-decoration: none;">
-                    GITHUB
-                </a>
-            </div>
-        </div>
-        
-        <section class="contact-form-section fade-in">
-            <form class="form" action="https://formspree.io/f/myzkrdpl" method="POST">
-                <div class="form-title">Let's Connect!<br>
-                    <span>Have a project or just want to say hi? Drop a message below!</span>
-                </div>
-                <input class="form-input" name="name" placeholder="Name" type="text" required> 
-                <input class="form-input" name="email" placeholder="Email" type="email" required>
-                <textarea class="form-input" name="message" placeholder="Message" required></textarea>
-                <button class="form-button" type="submit">Submit</button>
-            </form>
-        </section>
-        
-        <footer>
-            <div class="footer-container">
-                <span>©2025</span>
-                <span>INDIA</span>
-                <a href="#">BACK TO TOP</a>
-            </div>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+    <!-- Small inline script for mobile nav toggle (keeps it functional even if script.js is absent) -->
+    <script>
+        (function(){
+            const btn = document.getElementById('nav-toggle');
+            const list = document.getElementById('nav-list');
+            if (!btn || !list) return;
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                list.classList.toggle('open');
+            });
+        })();
+    </script>
 </body>
 </html>
